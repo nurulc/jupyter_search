@@ -112,7 +112,7 @@ class InstallCommand(install):
 		# Set the notebook extension to launch on startup by modifying the notebook.json
 		ensure_dir_exists(ConfigManager()._config_dir_default())
 		# Elements to be added
-		data_element = {'stepsize_nb-ext/main': True}
+		data_element = {'stepsize_nb-ext/main_v0-1': True}
 		data = {'load_extensions': data_element}
 		try:
 			cm = ConfigManager()
