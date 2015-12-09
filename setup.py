@@ -170,10 +170,10 @@ class InstallCommand(install):
 setup(
     name='Stepsize',
     version='0.1',
-	description='Search for code snippets with a library and function name',
+	description='Search for Python code snippets directly from code cells',
 	long_description='Search for code snippets with a library and function name within code ' \
 					 'cells, the extension will return a function signature with a link to the ' \
-					 'documentation as well as the code snippet with StackOverflow link.',
+					 'documentation as well as a code snippet with a StackOverflow link.',
 	platforms='Mac OS X, Windows',
 	author='Stepsize',
 	author_email='hello@stepsize.com',
