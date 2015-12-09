@@ -26,16 +26,16 @@ SERVER_EXT_CONFIG = [
 	"import os",
 	"import sys",
 	("sys.path.append(os.path.join(os.path.expanduser('~'), '.ipython/extensions/stepsize_server-ext'))"
-						 "\n"
-						 "if isinstance(c.NotebookApp.server_extensions, list):"
-						 "\n"
-						 "    c.NotebookApp.server_extensions.append('server_ext')"
-						 "\n"
-						 "else:"
-						 "\n"
-						 "    c.NotebookApp.server_extensions = []"
-						 "\n"
-						 "    c.NotebookApp.server_extensions.append('server_ext')")
+	 "\n"
+	 "if isinstance(c.NotebookApp.server_extensions, list):"
+	 "\n"
+	 "    c.NotebookApp.server_extensions.append('server_ext')"
+	 "\n"
+	 "else:"
+	 "\n"
+	 "    c.NotebookApp.server_extensions = []"
+	 "\n"
+	 "    c.NotebookApp.server_extensions.append('server_ext')")
 ];
 
 UID_DIR = os.path.join(SERVER_DIR, 'stepsize_version-id')
