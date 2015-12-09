@@ -23,6 +23,18 @@ Note:
 Installation
 ------------
 
+##### Jupyter Notebook Installation/Upgrade
+
+First, make sure your version of Jupyter is up-to-date.
+
+ - To install Jupyter Notebook, run `pip install jupyter` (see [How to install Jupyter Notebook](http://jupyter.readthedocs.org/en/latest/install.html#how-to-install-jupyter-notebook)).
+
+ - To update Jupyter Notebook, run `pip install -U jupyter` (see [Upgrading to Jupyter](http://jupyter.readthedocs.org/en/latest/install.html#upgrading-to-jupyter-experienced-users)).
+
+##### Jupyter Search Extension Installation
+
+To install the Jupyter Search extension, run the commands below.
+
 ```
 git clone https://github.com/Stepsize/jupyter_search.git
 cd jupyter_search
