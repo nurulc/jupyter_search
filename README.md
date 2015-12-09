@@ -23,7 +23,7 @@ Note:
 Installation
 ------------
 
-##### Jupyter Notebook Installation/Upgrade
+#### Jupyter Notebook Installation/Upgrade
 
 First, make sure your version of Jupyter is up-to-date.
 
@@ -31,7 +31,7 @@ First, make sure your version of Jupyter is up-to-date.
 
  - To update Jupyter Notebook, run `pip install -U jupyter` (see [Upgrading to Jupyter](http://jupyter.readthedocs.org/en/latest/install.html#upgrading-to-jupyter-experienced-users)).
 
-##### Jupyter Search Extension Installation
+#### Jupyter Search Extension Installation
 
 To install the Jupyter Search extension, run the commands below.
 
