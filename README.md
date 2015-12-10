@@ -52,7 +52,7 @@ If you do not run your Jupyter Notebook server locally, you will need to make a 
 
 The current configuration (v0.1) only allows localhost cross-origin requests to the Jupyter Notebook server, this is defined in the `jupyter_config.py` which is located (in the user directory) `~/.jupyter/jupyter_config.py`.
 
-To allow the extension to work for remote Jupyter Notebook servers, add the following line of code to the `jupyter_config.py`
+To allow the extension to work for remote Jupyter Notebook servers, add the following line of code to the `jupyter_config.py`.
 
 ```
 c.NotebookApp.allow_origin = "*"
