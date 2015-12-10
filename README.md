@@ -45,6 +45,17 @@ After installation, when you boot up Jupyter Notebook (`jupyter notebook`) you'l
 
 You can delete the `jupyter_search` cloned repo after installation, but you'll have to clone it again if you want to uninstall the extension.
 
+Note: IMPORTANT! If you do not run your Jupyter Notebook server locally please read the additional instructions below.
+
+The current configuration (v0.1) only allows localhost cross-origin requests to the Jupyter Notebook server, this is defined in the `jupyter_config.py` which is located (in the user directory) `~/.jupyter/jupyter_config.py`.
+
+To allow the extension to work for remote Jupyter Notebook servers add the following line of code to the `jupyter_config.py`
+
+```
+c.NotebookApp.allow_origin = "*"
+```
+This will allow all cross-origin requests, and will override any regular expression set on `c.NotebookApp.allow_origin_pat` (this is where we have set it to allow any cross-origin localhost requests from any port).
+
 Uninstaller
 -----------
 
