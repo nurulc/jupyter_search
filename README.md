@@ -57,7 +57,7 @@ To allow the extension to work for remote Jupyter Notebook servers add the follo
 ```
 c.NotebookApp.allow_origin = "*"
 ```
-This will allow all cross-origin requests, and will override any regular expression set on `c.NotebookApp.allow_origin_pat` (this is where we have set it to allow any cross-origin localhost requests from any port).
+This will allow all cross-origin requests, and will override any regular expression set on `c.NotebookApp.allow_origin_pat` (this is where we have set it to allow cross-origin request from the localhost with any port).
 
 Uninstaller
 -----------
