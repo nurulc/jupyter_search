@@ -93,7 +93,7 @@ define(['base/js/namespace', 'base/js/dialog', 'base/js/events', 'components/cod
 	var uid;
 
 	function getUID() {
-		$.getJSON('http://127.0.0.1:8888/uid', function(data) {
+		$.getJSON('/uid', function(data) {
 			uid = data.uid;
 		});
 	}

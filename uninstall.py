@@ -64,15 +64,15 @@ def remove_notebook_config(CONFIG):
         print("ACTION: Creating a backup notebook.json, %s" % (BACKUP))
         shutil.copyfile(CONFIG, BACKUP)
         # Element to be removed
-        data_element = {'stepsize_nb-ext/main_v0-1': True}
+        data_element = {'stepsize_nb-ext/main_v0-2': True}
         # Counter
         count = 0
         try:
             if open(CONFIG).read() != "":
                 with open(CONFIG) as f:
                     entries = json.load(f)
-                if 'stepsize_nb-ext/main_v0-1' in entries['load_extensions']:
-                    entries['load_extensions'].pop('stepsize_nb-ext/main_v0-1',
+                if 'stepsize_nb-ext/main_v0-2' in entries['load_extensions']:
+                    entries['load_extensions'].pop('stepsize_nb-ext/main_v0-2',
                                                    None)
                     count += 1
                     with open(CONFIG, 'w') as outfile:

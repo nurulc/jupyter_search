@@ -119,7 +119,7 @@ class InstallCommand(install):
         # modifying the notebook.json
         ensure_dir_exists(ConfigManager()._config_dir_default())
         # Elements to be added
-        data_element = {'stepsize_nb-ext/main_v0-1': True}
+        data_element = {'stepsize_nb-ext/main_v0-2': True}
         data = {'load_extensions': data_element}
         try:
             cm = ConfigManager()
