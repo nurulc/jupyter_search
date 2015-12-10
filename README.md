@@ -48,11 +48,11 @@ You can delete the `jupyter_search` cloned repo after installation, but you'll h
 
 #### Remote Jupyter Notebook Servers
 
-If you do not run your Jupyter Notebook server locally you will need to make a small modification to the configuration settings after running installation with the `setup.py`.
+If you do not run your Jupyter Notebook server locally, you will need to make a small modification to the configuration settings after installing the extension with `setup.py`.
 
 The current configuration (v0.1) only allows localhost cross-origin requests to the Jupyter Notebook server, this is defined in the `jupyter_config.py` which is located (in the user directory) `~/.jupyter/jupyter_config.py`.
 
-To allow the extension to work for remote Jupyter Notebook servers add the following line of code to the `jupyter_config.py`
+To allow the extension to work for remote Jupyter Notebook servers, add the following line of code to the `jupyter_config.py`
 
 ```
 c.NotebookApp.allow_origin = "*"
