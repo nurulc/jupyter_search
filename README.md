@@ -16,6 +16,8 @@ When you actually run the cell, the search result is overwritten with the output
 
 Note:
 
+ - On Mac, the search shortcut is `⌥` + `\`.
+
  - The extension only works on Jupyter versions 4.x. Do not try to install the extension if you're not using Jupyter 4.x.
 
  - The extension currently only supports Python-related searches.
