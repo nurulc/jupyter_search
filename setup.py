@@ -10,7 +10,10 @@ from notebook.nbextensions import install_nbextension
 from notebook.services.config import ConfigManager
 from jupyter_core.paths import jupyter_config_dir
 from jupyter_core.application import JupyterApp
-
+try:
+    input = raw_input
+except NameError:
+    pass
 
 NB_DIR = os.path.join(os.path.expanduser('~'), '.ipython/nbextensions')
 NB_EXT_DIR = os.path.join(os.path.dirname(__file__),
@@ -68,7 +71,7 @@ class InstallCommand(install):
 
         while 1:
             sys.stdout.write(question + prompt)
-            choice = raw_input().lower()
+            choice = input().lower()
             if default is not None and choice == '':
                 return default
             elif choice in valid.keys():

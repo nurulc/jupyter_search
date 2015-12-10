@@ -18,7 +18,7 @@ Note:
 
  - On Mac, the search shortcut is `⌥` + `/`.
 
- - Supports both Python 2 (tested on Python 2.7) and Python 3.
+ - Supports both Python 2.7 and Python 3.
 
  - The extension only works on Jupyter versions 4.x. Do not try to install the extension if you're not using Jupyter 4.x.
 
