@@ -52,7 +52,7 @@ class InstallCommand(install):
         self.setup_server_config(SERVER_EXT_CONFIG)
         self.setup_uid(UID_DIR, CUR_UID, UID)
         self.write_uid(CUR_UID)
-        print "Stepsize installation complete"
+        print("Stepsize installation complete")
 
     def query(self, question, default="yes"):
         valid = {"yes": "yes",   "y": "yes",  "ye": "yes",
@@ -90,12 +90,12 @@ class InstallCommand(install):
                 try:
                     install_nbextension(EXT_DIR, overwrite=True,
                                         nbextensions_dir=DIR)
-                    print "OUTCOME: Added the extension to your " \
-                          "%s directory" % (DIR)
+                    print("OUTCOME: Added the extension to your " \
+                          "%s directory" % (DIR))
                 except:
-                    print "WARNING: Unable to install the extension to your " \
-                          "(nb)extensions folder"
-                    print "ERROR: %s" % (sys.exc_info()[0])
+                    print("WARNING: Unable to install the extension to your " \
+                          "(nb)extensions folder")
+                    print("ERROR: %s" % (sys.exc_info()[0]))
                     raise
             else:
                 return
@@ -103,12 +103,12 @@ class InstallCommand(install):
             try:
                 install_nbextension(EXT_DIR, overwrite=True,
                                     nbextensions_dir=DIR)
-                print "OUTCOME: Added the extension to your %s directory" \
-                      % (DIR)
+                print("OUTCOME: Added the extension to your %s directory" \
+                      % (DIR))
             except:
-                print "WARNING: Unable to install the extension to your " \
-                      "(nb)extensions folder"
-                print "ERROR: %s" % (sys.exc_info()[0])
+                print("WARNING: Unable to install the extension to your " \
+                      "(nb)extensions folder")
+                print("ERROR: %s" % (sys.exc_info()[0]))
                 raise
 
     def setup_notebook_config(self):
@@ -121,12 +121,12 @@ class InstallCommand(install):
         try:
             cm = ConfigManager()
             cm.update('notebook', data)
-            print "OUTCOME: Added the Stepsize notebook extension " \
-                  "configuration to the notebook.json"
+            print("OUTCOME: Added the Stepsize notebook extension " \
+                  "configuration to the notebook.json")
         except:
-            print "WARNING: An error occured when trying to add %s to the " \
-                  "notebook.json" % (data)
-            print "ERROR: %s" % (sys.exc_info()[0])
+            print("WARNING: An error occured when trying to add %s to the " \
+                  "notebook.json" % (data))
+            print("ERROR: %s" % (sys.exc_info()[0]))
             raise
 
     def setup_server_config(self, EXT_CONFIG):
@@ -146,17 +146,17 @@ class InstallCommand(install):
                     fh.seek(0, 2)
                     fh.write('\n')
                     fh.write(i)
-        print "OUTCOME: Added the Stepsize server extension " \
-              "configuration to the jupyter_config.py"
+        print("OUTCOME: Added the Stepsize server extension " \
+              "configuration to the jupyter_config.py")
 
     def setup_uid(self, UID_DIR, CUR_UID, UID):
         if os.path.isfile(CUR_UID):
             pass
         else:
             shutil.copytree(UID, UID_DIR)
-            print "OUTCOME: Added the Stepsize extension installation " \
+            print("OUTCOME: Added the Stepsize extension installation " \
                   "identifier to %s" % (os.path.join(os.path.expanduser('~'),
-                                                     '.ipython/extensions'))
+                                                     '.ipython/extensions')))
 
     def write_uid(self, CUR_UID):
         # Code to write the uuid to the users uuid.json in their directory
@@ -167,8 +167,8 @@ class InstallCommand(install):
             entry['uid'] = id
             with open(CUR_UID, 'w') as outfile:
                 json.dump(entry, outfile)
-                print "OUTCOME: Set the Stepsize extension installation " \
-                      "identifier"
+                print("OUTCOME: Set the Stepsize extension installation " \
+                      "identifier")
 
 setup(
     name='Stepsize',

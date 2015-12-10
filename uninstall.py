@@ -34,7 +34,7 @@ def main():
     remove_notebook_config(NB_CONFIG)
     remove_server_config(SERVER_CONFIG, SERVER_EXT_CONFIG)
     remove_egg()
-    print "Stepsize uninstallation complete"
+    print("Stepsize uninstallation complete")
 
 
 def remove_extension(DIR, CUR_EXT):
@@ -42,16 +42,16 @@ def remove_extension(DIR, CUR_EXT):
     if os.path.exists(CUR_EXT):
         try:
             shutil.rmtree(CUR_EXT)
-            print "OUTCOME: Removed the Stepsize extension from your " \
-                  "%s directory" % (DIR)
+            print("OUTCOME: Removed the Stepsize extension from your " \
+                  "%s directory" % (DIR))
         except:
-            print "WARNING: Unable to uninstall the extension in your " \
-                  "%s directory" % (DIR)
-            print "ERROR: %s, at line %d" % (sys.exc_info()[0],
-                                             sys.exc_traceback.tb_lineno)
+            print("WARNING: Unable to uninstall the extension in your " \
+                  "%s directory" % (DIR))
+            print("ERROR: %s, at line %d" % (sys.exc_info()[0],
+                                             sys.exc_traceback.tb_lineno))
     else:
-        print "WARNING: Unable to uninstall the Stepsize extension since it " \
-              "does not exist in %s" % (DIR)
+        print("WARNING: Unable to uninstall the Stepsize extension since it " \
+              "does not exist in %s" % (DIR))
 
 
 def remove_notebook_config(CONFIG):
@@ -61,7 +61,7 @@ def remove_notebook_config(CONFIG):
         timestamp = datetime.datetime.now().strftime("%d-%m-%Y_T%H-%M-%S")
         title = ('backup_notebook_' + timestamp + '.json')
         BACKUP = os.path.join(ConfigManager()._config_dir_default(), title)
-        print "ACTION: Creating a backup notebook.json, %s" % (BACKUP)
+        print("ACTION: Creating a backup notebook.json, %s" % (BACKUP))
         shutil.copyfile(CONFIG, BACKUP)
         # Element to be removed
         data_element = {'stepsize_nb-ext/main_v0-1': True}
@@ -78,17 +78,17 @@ def remove_notebook_config(CONFIG):
                     with open(CONFIG, 'w') as outfile:
                         json.dump(entries, outfile)
                 if count > 0:
-                    print "OUTCOME: Removed the Stepsize extension " \
-                          "configuration from the notebook.json"
+                    print("OUTCOME: Removed the Stepsize extension " \
+                          "configuration from the notebook.json")
         except:
-            print "WARNING: An error occured when trying to remove %s from " \
-                  "the notebook.json" % (data_element)
-            print "ERROR: %s, at line %d" % (sys.exc_info()[0],
-                                             sys.exc_traceback.tb_lineno)
+            print("WARNING: An error occured when trying to remove %s from " \
+                  "the notebook.json" % (data_element))
+            print("ERROR: %s, at line %d" % (sys.exc_info()[0],
+                                             sys.exc_traceback.tb_lineno))
     else:
-        print "WARNING: Unable to remove the Stepsize extension " \
+        print("WARNING: Unable to remove the Stepsize extension " \
               "configuration since the notebook.json does not exist in %s"\
-              % (ConfigManager()._config_dir_default())
+              % (ConfigManager()._config_dir_default()))
 
 
 def remove_server_config(CONFIG, EXT_CONFIG):
@@ -98,7 +98,7 @@ def remove_server_config(CONFIG, EXT_CONFIG):
         timestamp = datetime.datetime.now().strftime("%d-%m-%Y_T%H-%M-%S")
         title = ('backup_config_' + timestamp + '.py')
         BACKUP = os.path.join(jupyter_config_dir(), title)
-        print "ACTION: Creating a backup jupter_config.py, %s" % (BACKUP)
+        print("ACTION: Creating a backup jupter_config.py, %s" % (BACKUP))
         shutil.copyfile(CONFIG, BACKUP)
         # Counter
         count = 0
@@ -116,17 +116,17 @@ def remove_server_config(CONFIG, EXT_CONFIG):
             f.truncate()
             f.close()
             if count > 0:
-                print "OUTCOME: Removed the Stepsize extension " \
-                      "configuration from the jupyter_config.py"
+                print("OUTCOME: Removed the Stepsize extension " \
+                      "configuration from the jupyter_config.py")
         except:
-            print "WARNING: An error occured when trying to remove the " \
-                  "Stepsize server configuration from the jupyter_config.py"
-            print "ERROR: %s, at line %d" % (sys.exc_info()[0],
-                                             sys.exc_traceback.tb_lineno)
+            print("WARNING: An error occured when trying to remove the " \
+                  "Stepsize server configuration from the jupyter_config.py")
+            print("ERROR: %s, at line %d" % (sys.exc_info()[0],
+                                             sys.exc_traceback.tb_lineno))
     else:
-        print "WARNING: Unable to remove the Stepsize extension " \
+        print("WARNING: Unable to remove the Stepsize extension " \
               "configuration since the jupyter_config.py does not exist in " \
-              "%s" % (jupyter_config_dir())
+              "%s" % (jupyter_config_dir()))
 
 
 def remove_egg():
@@ -136,14 +136,14 @@ def remove_egg():
     if os.path.exists(EGG_DIR):
         try:
             shutil.rmtree(EGG_DIR)
-            print "OUTCOME: Removed the Stepsize.egg-info"
+            print("OUTCOME: Removed the Stepsize.egg-info")
         except:
-            print "WARNING: Unable to remove the Stepsize.egg-info"
-            print "ERROR: %s, at line %d" % (sys.exc_info()[0],
-                                             sys.exc_traceback.tb_lineno)
+            print("WARNING: Unable to remove the Stepsize.egg-info")
+            print("ERROR: %s, at line %d" % (sys.exc_info()[0],
+                                             sys.exc_traceback.tb_lineno))
     else:
-        print "WARNING: Unable to remove the Stepsize.egg-info since it " \
-              "does not exist in the directory"
+        print("WARNING: Unable to remove the Stepsize.egg-info since it " \
+              "does not exist in the directory")
 
 
 if __name__ == '__main__':
