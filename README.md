@@ -45,7 +45,8 @@ After installation, when you boot up Jupyter Notebook (`jupyter notebook`) you'l
 
 You can delete the `jupyter_search` cloned repo after installation, but you'll have to clone it again if you want to uninstall the extension.
 
-##### Remote Jupyter Notebook Servers
+
+#### Remote Jupyter Notebook Servers
 
 If you do not run your Jupyter Notebook server locally you will need to make a small modification to the configuration settings, detailed below.
 
