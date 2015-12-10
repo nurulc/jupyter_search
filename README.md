@@ -24,6 +24,7 @@ Note:
 
  - The extension currently only supports Python-related searches.
 
+
 You can manage all your extensions from the `notebook.json` which is located in `~/.jupyter/nbconfig/notebook.json`. For more information on how notebook extensions work please see [Notebook extensions|Jupyter](https://carreau.gitbooks.io/jupyter-book/content/notebook-extensions.html)
 
 Installation
