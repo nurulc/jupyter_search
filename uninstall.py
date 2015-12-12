@@ -71,23 +71,23 @@ def remove_notebook_config(CONFIG):
             if open(CONFIG).read() != "":
                 with open(CONFIG) as f:
                     entries = json.load(f)
-                if 'stepsize_nb-ext/main_v0-2' in entries['load_extensions']:
-                    entries['load_extensions'].pop('stepsize_nb-ext/main_v0-2',
-                                                   None)
-                    count += 1
-                    with open(CONFIG, 'w') as outfile:
-                        json.dump(entries, outfile)
+                for ext in entries['load_extensions'].keys():
+                    if 'stepsize_nb-ext' in ext:
+                        entries['load_extensions'].pop(ext)
+                        count += 1
+                with open(CONFIG, 'w') as outfile:
+                    json.dump(entries, outfile)
                 if count > 0:
-                    print("OUTCOME: Removed the Stepsize extension " \
+                    print("OUTCOME: Removed the Stepsize extension "
                           "configuration from the notebook.json")
         except:
-            print("WARNING: An error occured when trying to remove %s from " \
+            print("WARNING: An error occured when trying to remove %s from "
                   "the notebook.json" % (data_element))
             print("ERROR: %s, at line %d" % (sys.exc_info()[0],
                                              sys.exc_traceback.tb_lineno))
     else:
-        print("WARNING: Unable to remove the Stepsize extension " \
-              "configuration since the notebook.json does not exist in %s"\
+        print("WARNING: Unable to remove the Stepsize extension "
+              "configuration since the notebook.json does not exist in %s"
               % (ConfigManager()._config_dir_default()))
 
 

@@ -80,7 +80,6 @@ class InstallCommand(install):
                 sys.stdout.write("Please respond with 'yes' or 'no' "
                                  "(or 'y' or 'n').\n")
 
-
     def setup_extensions(self, CUR_EXT, EXT_DIR, DIR):
         # Install the extensions to the required directories
         ensure_dir_exists(DIR)
@@ -93,10 +92,10 @@ class InstallCommand(install):
                 try:
                     install_nbextension(EXT_DIR, overwrite=True,
                                         nbextensions_dir=DIR)
-                    print("OUTCOME: Added the extension to your " \
+                    print("OUTCOME: Added the extension to your "
                           "%s directory" % (DIR))
                 except:
-                    print("WARNING: Unable to install the extension to your " \
+                    print("WARNING: Unable to install the extension to your "
                           "(nb)extensions folder")
                     print("ERROR: %s" % (sys.exc_info()[0]))
                     raise
@@ -106,10 +105,10 @@ class InstallCommand(install):
             try:
                 install_nbextension(EXT_DIR, overwrite=True,
                                     nbextensions_dir=DIR)
-                print("OUTCOME: Added the extension to your %s directory" \
+                print("OUTCOME: Added the extension to your %s directory"
                       % (DIR))
             except:
-                print("WARNING: Unable to install the extension to your " \
+                print("WARNING: Unable to install the extension to your "
                       "(nb)extensions folder")
                 print("ERROR: %s" % (sys.exc_info()[0]))
                 raise
@@ -119,15 +118,19 @@ class InstallCommand(install):
         # modifying the notebook.json
         ensure_dir_exists(ConfigManager()._config_dir_default())
         # Elements to be added
-        data_element = {'stepsize_nb-ext/main_v0-2': True}
+        version = 2
+        data_element = {'stepsize_nb-ext/main': None}
+        for i in range(1, version):
+            data_element['stepsize_nb-ext/main_v0-%i' % i] = None
+        data_element['stepsize_nb-ext/main_v0-%i' % version] = True
         data = {'load_extensions': data_element}
         try:
             cm = ConfigManager()
             cm.update('notebook', data)
-            print("OUTCOME: Added the Stepsize notebook extension " \
+            print("OUTCOME: Added the Stepsize notebook extension "
                   "configuration to the notebook.json")
         except:
-            print("WARNING: An error occured when trying to add %s to the " \
+            print("WARNING: An error occured when trying to add %s to the "
                   "notebook.json" % (data))
             print("ERROR: %s" % (sys.exc_info()[0]))
             raise
@@ -149,7 +152,7 @@ class InstallCommand(install):
                     fh.seek(0, 2)
                     fh.write('\n')
                     fh.write(i)
-        print("OUTCOME: Added the Stepsize server extension " \
+        print("OUTCOME: Added the Stepsize server extension "
               "configuration to the jupyter_config.py")
 
     def setup_uid(self, UID_DIR, CUR_UID, UID):
@@ -157,7 +160,7 @@ class InstallCommand(install):
             pass
         else:
             shutil.copytree(UID, UID_DIR)
-            print("OUTCOME: Added the Stepsize extension installation " \
+            print("OUTCOME: Added the Stepsize extension installation "
                   "identifier to %s" % (os.path.join(os.path.expanduser('~'),
                                                      '.ipython/extensions')))
 
@@ -170,7 +173,7 @@ class InstallCommand(install):
             entry['uid'] = id
             with open(CUR_UID, 'w') as outfile:
                 json.dump(entry, outfile)
-                print("OUTCOME: Set the Stepsize extension installation " \
+                print("OUTCOME: Set the Stepsize extension installation "
                       "identifier")
 
 setup(
