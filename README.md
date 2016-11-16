@@ -1,7 +1,7 @@
 Jupyter Search (Python)
 -------------------------------
 
-Note: This extension is no longer supported. To uninstall it, see [Uninstaller](https://github.com/Stepsize/jupyter_search#uninstaller).
+Note: The original author nolonger supports this. I would like to have this feature and I will try to maintain it.
 
 This Jupyter Notebook extension allows you to quickly find information relating to a class, function, etc. The extension returns the class/function signature (including a link to the documentation) and an example code snippet from StackOverflow or the documentation.
 
